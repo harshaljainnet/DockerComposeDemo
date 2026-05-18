@@ -1,0 +1,19 @@
+services:
+
+  backendapp:
+    image: dockercomposebackend:2.0
+    build:
+      context: .
+      dockerfile: DockerComposeDemoBackendApp/Dockerfile
+    container_name: backendcontainer
+    ports:
+      - "6400:8080"
+
+  uiapp:
+    image: dockercomposeui:2.0
+    build:
+      context: .
+      dockerfile: DockerComposeDemoUIApp/Dockerfile
+    container_name: uicontainer
+    ports:
+      - "6600:8080"
